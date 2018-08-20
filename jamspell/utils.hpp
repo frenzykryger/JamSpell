@@ -24,6 +24,11 @@ struct TWord {
     bool operator ==(const TWord& other) const {
         return (Ptr == other.Ptr && Len == other.Len);
     }
+
+    explicit operator bool() const {
+        return Ptr && Len;
+    }
+
     const wchar_t* Ptr = nullptr;
     size_t Len = 0;
 };
